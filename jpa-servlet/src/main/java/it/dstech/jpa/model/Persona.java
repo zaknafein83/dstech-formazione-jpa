@@ -1,9 +1,12 @@
 package it.dstech.jpa.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Persona {
@@ -15,6 +18,9 @@ public class Persona {
 	private String nome;
 	
 	private String cognome;
+	 
+	@OneToMany
+	private List<Libro> libri;
 	
 	public Persona() {
 	}
@@ -41,6 +47,14 @@ public class Persona {
 
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
+	}
+
+	public List<Libro> getLibri() {
+		return libri;
+	}
+
+	public void setLibri(List<Libro> libri) {
+		this.libri = libri;
 	}
 
 }
