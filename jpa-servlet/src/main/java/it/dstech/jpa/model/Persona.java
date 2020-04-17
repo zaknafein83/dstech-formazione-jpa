@@ -22,6 +22,11 @@ public class Persona {
 	@OneToMany
 	private List<Libro> libri;
 	
+	@Override
+	public String toString() {
+		return "Persona [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", libri=" + libri + "]";
+	}
+
 	public Persona() {
 	}
 	
